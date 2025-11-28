@@ -1,0 +1,42 @@
+.app {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #1f2933;
+}
+
+.form {
+	width: 100%;
+	max-width: 400px;
+	padding: 24px;
+	border-radius: 8px;
+	background-color: #111827;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	box-sizing: border-box;
+}
+
+.actions {
+	margin-top: 16px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.button {
+	padding: 8px 16px;
+	border-radius: 4px;
+	border: none;
+	background-color: #2563eb;
+	color: #f9fafb;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.button:hover:not(:disabled) {
+	background-color: #1d4ed8;
+}
+
+.button:disabled {
+	background-color: #4b5563;
+	cursor: not-allowed;
+}
