@@ -1,32 +1,19 @@
 import styles from "./field.module.css";
 
 const Field = (props) => {
-	const {
-		id,
-		label,
-		name,
-		type,
-		value,
-		placeholder,
-		onChange,
-		onBlur,
-		touched,
-		error,
-	} = props;
+	const { id, label, name, type, placeholder, register, error } = props;
+
 	return (
 		<div className={styles.field}>
 			<label htmlFor={id}>{label}</label>
 			<input
 				id={id}
-				name={name}
 				type={type}
-				value={value}
 				placeholder={placeholder}
-				onChange={onChange}
-				onBlur={onBlur}
+				// {...register(name)} вешает на input value, onChange, onBlur и т.п. из React Hook Form.
+				{...register(name)}
 			/>
-			{/* Отображение ошибок: сначала поле должно быть “потрогано”, затем нужна непустая строка ошибки. Показываем ошибку под полем input, если поле touched (потрогано) и есть текст ошибки */}
-			{touched && error && <div className={styles.error}>{error}</div>}
+			{error && <div className={styles.error}>{error}</div>}
 		</div>
 	);
 };
